@@ -13,6 +13,8 @@ Original Code: https://github.com/urfavhazee/capware-cpp-sdk
 
 int main() {
 	capware::sdk sdk;
+    
+	//Only Needed If You Want To Use The SDK, Otherwise You Can Just Use GetOffset
     if (!sdk.initialize()) {
         std::cout << "init failed\n";
         return 1;
