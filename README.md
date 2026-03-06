@@ -12,16 +12,21 @@ Original Code: https://github.com/urfavhazee/capware-cpp-sdk
 #include <iostream>
 
 int main() {
-    capware::sdk sdk;
-
+	capware::sdk sdk;
     if (!sdk.initialize()) {
         std::cout << "init failed\n";
         return 1;
-    }
+	}
 
+    //Example: Using The SDK
     std::cout << std::hex << sdk.player_team() << "\n";
+
+	//Example: GetOffset
+	uintptr_t NamePrivate = sdk.get_offset("APlayerState", "PlayerNamePrivate");
+
+	std::cout << std::hex << NamePrivate << "\n";
 	system("pause");
-    return 0;
+	return 0;
 }
 ```
 
